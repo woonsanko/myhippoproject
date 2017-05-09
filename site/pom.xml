@@ -90,6 +90,11 @@
       <artifactId>hst-mock</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.onehippo.forge.urlrewriter</groupId>
+      <artifactId>urlrewriter-module-hst</artifactId>
+      <version>${forge.urlrewriter.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <resources>
