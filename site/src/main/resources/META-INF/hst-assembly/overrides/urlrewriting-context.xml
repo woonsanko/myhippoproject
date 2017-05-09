@@ -17,7 +17,8 @@
     <property name="rewriteRulesLocation" value="/content/urlrewriter"/>
   </bean>
   
-  <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+  <bean class="org.example.container.TypeDeterminedMethodInvokingFactoryBean">
+    <constructor-arg name="objectType" value="java.lang.Boolean"/>
     <property name="targetObject" ref="jcrObservationEventListenerItems"/>
     <property name="targetMethod" value="add"/>
     <property name="arguments">
