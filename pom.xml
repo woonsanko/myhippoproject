@@ -61,6 +61,7 @@
   <properties>
 
     <!--***START temporary override of versions*** -->
+    <hippo.hst.version>4.2.2-SNAPSHOT</hippo.hst.version>
     <!-- ***END temporary override of versions*** -->
 
     <essentials.version>3.2.0</essentials.version>

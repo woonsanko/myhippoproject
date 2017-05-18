@@ -17,25 +17,27 @@
     <property name="rewriteRulesLocation" value="/content/urlrewriter"/>
   </bean>
   
-  <bean class="org.example.container.TypeDeterminedMethodInvokingFactoryBean">
-    <constructor-arg name="objectType" value="java.lang.Boolean"/>
+  <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
     <property name="targetObject" ref="jcrObservationEventListenerItems"/>
     <property name="targetMethod" value="add"/>
     <property name="arguments">
-      <bean class="org.hippoecm.hst.core.jcr.EventListenerItemImpl">
-        <property name="nodeAddedEnabled" value="true"/>
-        <property name="nodeRemovedEnabled" value="true"/>
-        <property name="propertyAddedEnabled" value="true"/>
-        <property name="propertyChangedEnabled" value="true"/>
-        <property name="propertyRemovedEnabled" value="true"/>
-        <property name="absolutePath" value="/content/urlrewriter"/>
-        <property name="deep" value="true"/>
-        <property name="eventListener">
-          <bean class="org.onehippo.forge.rewriting.repo.UrlRewriteListener">
-            <property name="rewriteManager" ref="org.onehippo.forge.rewriting.repo.RewritingManager"/>
-          </bean>
-        </property>
-      </bean>
+      <list>
+        <bean class="org.hippoecm.hst.core.jcr.EventListenerItemImpl">
+          <property name="nodeAddedEnabled" value="true"/>
+          <property name="nodeRemovedEnabled" value="true"/>
+          <property name="propertyAddedEnabled" value="true"/>
+          <property name="propertyChangedEnabled" value="true"/>
+          <property name="propertyRemovedEnabled" value="true"/>
+          <property name="absolutePath" value="/content/urlrewriter"/>
+          <property name="deep" value="true"/>
+          <property name="eventListener">
+            <bean class="org.onehippo.forge.rewriting.repo.UrlRewriteListener">
+              <property name="rewriteManager" ref="org.onehippo.forge.rewriting.repo.RewritingManager"/>
+            </bean>
+          </property>
+        </bean>
+      </list>
     </property>
+    <property name="objectType" value="java.lang.Boolean" />
   </bean>
 </beans>
