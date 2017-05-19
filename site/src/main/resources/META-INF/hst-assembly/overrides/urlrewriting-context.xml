@@ -18,6 +18,7 @@
   </bean>
   
   <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+    <constructor-arg value="java.lang.Boolean" />
     <property name="targetObject" ref="jcrObservationEventListenerItems"/>
     <property name="targetMethod" value="add"/>
     <property name="arguments">
@@ -38,6 +39,5 @@
         </bean>
       </list>
     </property>
-    <property name="objectType" value="java.lang.Boolean" />
   </bean>
 </beans>

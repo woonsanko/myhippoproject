@@ -97,11 +97,11 @@
 		<property name="beforeValves" value="jaxrsRestPlainServiceValve" />
 	</bean>
 
-	<bean
-		class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+	<bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+        <constructor-arg value="java.lang.Void" />
 		<property name="targetObject">
-			<bean
-				class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+			<bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+                <constructor-arg value="org.hippoecm.hst.core.container.Pipeline" />
 				<property name="targetObject" ref="org.hippoecm.hst.core.container.Pipelines" />
 				<property name="targetMethod" value="getPipeline" />
 				<property name="arguments">
@@ -109,7 +109,6 @@
 					   <value>JaxrsRestPlainPipeline</value>
                     </list>
 				</property>
-                <property name="objectType" value="org.hippoecm.hst.core.container.Pipeline" />
 			</bean>
 		</property>
 		<property name="targetMethod" value="addProcessingValve" />
@@ -118,6 +117,5 @@
 			  <ref bean="jaxrsRestPlainLocalizationValve" />
             </list>
 		</property>
-        <property name="objectType" value="java.lang.Void" />
 	</bean>
 </beans>
